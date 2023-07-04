@@ -4,6 +4,9 @@
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}" Height="350" Width="525" >
+    <Window.InputBindings>
+        <KeyBinding Key="Esc" Command="{Binding EscCommand}" />
+    </Window.InputBindings>
     <Grid Background="Beige">
         <ContentControl prism:RegionManager.RegionName="ContentRegion" />
         <TextBlock Text="{Binding Title}"/>

@@ -1,4 +1,7 @@
-﻿using Prism.Mvvm;
+﻿using Prism.Commands;
+using Prism.Mvvm;
+using System.Windows;
+using System.Windows.Input;
 
 namespace ScreenSaver_Wpf_Prism.ViewModels
 {
@@ -11,9 +14,21 @@ namespace ScreenSaver_Wpf_Prism.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
+        public DelegateCommand EscCommand { get; set; }
+
         public MainWindowViewModel()
         {
+            EscCommand = new DelegateCommand(EscKeyDown);
+        }
 
+        private void EscKeyDown()
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void OnStart()
+        {
+            
         }
     }
 }
