@@ -23,29 +23,16 @@ namespace ScreenSaver_Wpf_Prism
             {
                 return Container.Resolve<MainWindow>();
             }
-            //return null;
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<Page1>();
-            containerRegistry.RegisterForNavigation<Page2>();
+            containerRegistry.RegisterForNavigation<Page01>();
+            containerRegistry.RegisterForNavigation<Page02>();
         }
 
-        /// <summary>
-        /// Startup different window depending on what parameter be passed in. (Example: App.exe Hello, Hello will be passed in.)
-        /// </summary>
-        /// <param name="e">Program startup parameter.</param>
         protected override void OnStartup(StartupEventArgs e)
         {
-            //if (e.Args.Length == 1)
-            //{
-            //    startup_window = "SettingWindow";
-            //}
-            //else
-            //{
-            //    startup_window = "MainWindow";
-            //}
             _startupEventArgs = e;
             base.OnStartup(e);
         }
@@ -54,8 +41,8 @@ namespace ScreenSaver_Wpf_Prism
         {
             //获得RegionManager实例
             IRegionManager regionManager = Container.Resolve<IRegionManager>();
-            //指定程序启动后Region中默认注入的内容。指定Region的名称，和要填充的View的
-            regionManager.RegisterViewWithRegion("PageRegion", typeof(Page1));
+            //指定程序启动后Region中默认注入的内容。
+            regionManager.RegisterViewWithRegion("PageRegion", typeof(Page01));
 
             base.OnInitialized();
         }

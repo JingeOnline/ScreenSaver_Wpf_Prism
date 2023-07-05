@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ScreenSaver_Wpf_Prism.ViewModels
 {
-    public class Page1ViewModel
+    public class Page01ViewModel
     {
     }
 }

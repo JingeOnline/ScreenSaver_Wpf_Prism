@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace ScreenSaver_Wpf_Prism.Views
 {
     /// <summary>
-    /// Interaction logic for Page2.xaml
+    /// Interaction logic for Page1.xaml
     /// </summary>
-    public partial class Page2 : UserControl
+    public partial class Page01 : UserControl
     {
-        public Page2()
+        public Page01()
         {
             InitializeComponent();
         }
