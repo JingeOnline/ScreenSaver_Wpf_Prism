@@ -4,11 +4,14 @@
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}" Height="350" Width="525" >
+    <!--Exit app when Esc KeyDown-->
     <Window.InputBindings>
         <KeyBinding Key="Esc" Command="{Binding EscCommand}" />
+        <KeyBinding Key="Right" Command="{Binding RightCommand}"/>
+        <KeyBinding Key="Left" Command="{Binding LeftCommand}"/>
     </Window.InputBindings>
     <Grid Background="Beige">
-        <ContentControl prism:RegionManager.RegionName="ContentRegion" />
-        <TextBlock Text="{Binding Title}"/>
+        <ContentControl prism:RegionManager.RegionName="PageRegion"
+                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
     </Grid>
 </Window>
