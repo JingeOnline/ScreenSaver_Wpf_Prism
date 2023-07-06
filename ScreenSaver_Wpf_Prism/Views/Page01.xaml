@@ -5,11 +5,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
+             xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
              xmlns:local="clr-namespace:ScreenSaver_Wpf_Prism.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="CadetBlue">
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
-                   Text="Page1" FontSize="32"/>
+             d:DesignHeight="1080" d:DesignWidth="1920">
+
+    <Grid Background="Black" x:Name="Grid_Root">
+        <wv2:WebView2 Name="WV1" ZoomFactor="1" Height="720" Width="720" Margin="0,100,0,0" 
+                      HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <wv2:WebView2 Name="WV2" ZoomFactor="1.5" Height="200" Width="1700" Margin="0,0,0,40"
+                      HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
     </Grid>
 </UserControl>

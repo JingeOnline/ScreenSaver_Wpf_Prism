@@ -10,7 +10,6 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -18,13 +17,11 @@ using System.Windows.Shapes;
 namespace ScreenSaver_Wpf_Prism.Views
 {
     /// <summary>
-    /// Interaction logic for Page1.xaml
+    /// Interaction logic for Page03.xaml
     /// </summary>
-    public partial class Page01 : UserControl
+    public partial class Page03 : UserControl
     {
-         
-
-        public Page01()
+        public Page03()
         {
             InitializeComponent();
             Run();
@@ -34,11 +31,8 @@ namespace ScreenSaver_Wpf_Prism.Views
         {
             await WV1.EnsureCoreWebView2Async();
             WV1.DefaultBackgroundColor = System.Drawing.Color.Transparent;
-            WV1.NavigateToString(HtmlHelper.Clock_Round);
-            await WV2.EnsureCoreWebView2Async();
-            WV2.DefaultBackgroundColor = System.Drawing.Color.Transparent;
-            WV2.NavigateToString(HtmlHelper.Weather_Week);
-        }
+            WV1.CoreWebView2.Navigate(HtmlHelper.Youtube_4K_Url);
 
+        }
     }
 }

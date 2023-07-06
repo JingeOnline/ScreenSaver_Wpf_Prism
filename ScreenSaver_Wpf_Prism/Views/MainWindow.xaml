@@ -3,15 +3,26 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
-        Title="{Binding Title}" Height="350" Width="525" >
+        Title="{Binding Title}" Height="1920" Width="1080" WindowState="Maximized" WindowStyle="None">
     <!--Exit app when Esc KeyDown-->
     <Window.InputBindings>
         <KeyBinding Key="Esc" Command="{Binding EscCommand}" />
         <KeyBinding Key="Right" Command="{Binding RightCommand}"/>
         <KeyBinding Key="Left" Command="{Binding LeftCommand}"/>
     </Window.InputBindings>
-    <Grid Background="Beige">
-        <ContentControl prism:RegionManager.RegionName="PageRegion"
-                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+    <Grid Background="Black">
+        <ContentControl prism:RegionManager.RegionName="PageRegion" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                        x:Name="Region_ContentControl"/>
+        <!--<ContentControl prism:RegionManager.RegionName="PageRegion" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <ContentControl.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard >
+                            <ThicknessAnimation Duration="0:0:0.5" Storyboard.TargetProperty="Margin" From="1920,0,0,0" To="0" AccelerationRatio="0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </ContentControl.Triggers>
+        </ContentControl>-->
     </Grid>
 </Window>

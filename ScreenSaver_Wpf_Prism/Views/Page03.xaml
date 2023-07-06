@@ -1,17 +1,16 @@
-﻿<UserControl x:Class="ScreenSaver_Wpf_Prism.Views.Page02"
+﻿<UserControl x:Class="ScreenSaver_Wpf_Prism.Views.Page03"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ScreenSaver_Wpf_Prism.Views"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
              xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
-             xmlns:local="clr-namespace:ScreenSaver_Wpf_Prism.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="1080" d:DesignWidth="1920">
-
+             d:DesignHeight="450" d:DesignWidth="800">
     <Grid  Background="Black" x:Name="Grid_Root">
-        <wv2:WebView2 Name="WV1" ZoomFactor="1" Margin="20" Width="1880" Height="1040"
-                      HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <wv2:WebView2 Name="WV1" ZoomFactor="1" 
+                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
     </Grid>
 </UserControl>
