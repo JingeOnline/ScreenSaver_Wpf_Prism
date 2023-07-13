@@ -5,6 +5,8 @@ using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Interop;
+using System.Windows.Media;
 using System.Windows.Media.Animation;
 
 namespace ScreenSaver_Wpf_Prism.Views
@@ -18,7 +20,8 @@ namespace ScreenSaver_Wpf_Prism.Views
         private MainWindowViewModel _VM;
         public MainWindow()
         {
-
+            //获取DPI和缩放比
+            DpiScale sc=VisualTreeHelper.GetDpi(this);
             Cursor = Cursors.None;
             SetCursorPos(10000, 10000);
             _AnimationMilisecond =Helper.GetAnimationMillisecond();

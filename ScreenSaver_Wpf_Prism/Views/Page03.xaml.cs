@@ -1,6 +1,8 @@
 ﻿using ScreenSaver_Wpf_Prism.Helpers;
+using ScreenSaver_Wpf_Prism.Services;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,9 +31,13 @@ namespace ScreenSaver_Wpf_Prism.Views
 
         public async Task Run()
         {
+            YouTubeService youTubeService = new YouTubeService();
             await WV1.EnsureCoreWebView2Async();
             WV1.DefaultBackgroundColor = System.Drawing.Color.Transparent;
-            WV1.CoreWebView2.Navigate(HtmlHelper.Youtube_4K_Url);
+            string url=await youTubeService.GetRandomVideoEmbedUrl();
+            Debug.WriteLine(url);
+            //WV1.CoreWebView2.Navigate(HtmlHelper.Youtube_4K_Url);
+            WV1.CoreWebView2.Navigate(url);
 
         }
     }

@@ -30,6 +30,8 @@ namespace ScreenSaver_Wpf_Prism
             containerRegistry.RegisterForNavigation<Page01>();
             containerRegistry.RegisterForNavigation<Page02>();
             containerRegistry.RegisterForNavigation<Page03>();
+            containerRegistry.RegisterForNavigation<Page04>();
+            containerRegistry.RegisterForNavigation<Page05>();
         }
 
         protected override void OnStartup(StartupEventArgs e)

@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ScreenSaver_Wpf_Prism.Helpers
 {
@@ -40,6 +41,23 @@ namespace ScreenSaver_Wpf_Prism.Helpers
         public static int GetAnimationMillisecond()
         {
             return Int32.Parse(config.AppSettings.Settings["AnimationMillisecond"].Value);
+        }
+        public static string GetGooleApiKey()
+        {
+            try
+            {
+                string key = config.AppSettings.Settings["GoogleApiKey"].Value;
+                if (string.IsNullOrEmpty(key))
+                {
+                    MessageBox.Show("Please setup google api key in the config file.");
+                }
+                return key;
+            }
+            catch
+            {
+                MessageBox.Show("Please setup google api key in the config file.");
+                return null;
+            }
         }
         #endregion
     }
